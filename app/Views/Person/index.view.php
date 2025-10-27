@@ -1,5 +1,3 @@
-<?php /** @var App\Modules\Home\Homeview $this */ ?>
-
-<p>Hello!</p>
-
-{{  $people }}
+<ul :foreach="$this->people as $person">
+    <li>{{ $person->name }}: {{ $person->age }}</li>
+</ul>

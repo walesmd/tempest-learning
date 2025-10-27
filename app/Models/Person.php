@@ -1,9 +1,10 @@
 <?php
 
 namespace App\Models;
+
 use function Tempest\Database\query;
 
-final readonly class Person
+final class Person
 {
     public int $id;
     public string $username;
@@ -13,6 +14,10 @@ final readonly class Person
     public string $updated_at;
 
     public function __construct() {
+    }
+
+    public function findAll(): array {
+        return query(Person::class)->select()->all();
     }
 
     public function findById(int $id): ?Person {
