@@ -10,6 +10,7 @@ use Tempest\Http\Responses\Redirect;
 use App\Models\Person;
 
 use function Tempest\view;
+use function Tempest\Router\uri;
 
 
 final readonly class PeopleController
@@ -42,9 +43,9 @@ final readonly class PeopleController
     }
 
     #[Post('/people/create')]
-    public function createPost(): Redirect
+    public function store(): Redirect
     {
         // TODO: Figure out the right way to use uri()
-        return new Redirect('/people');
+        return new Redirect("/people");
     }
 }

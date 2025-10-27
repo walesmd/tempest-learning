@@ -1,8 +1,5 @@
 <?php
-use function \Tempest\router\uri;
-use App\Controllers\PeopleController;
-
-// TODO: Figure out the right way to use uri()
+    // TODO: Figure out the right way to use uri()
 ?>
 
 <x-form action="/people/create">

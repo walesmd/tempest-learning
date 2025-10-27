@@ -16,7 +16,7 @@ final class Person
     public function __construct() {
     }
 
-    public function findAll(): array {
+    static function findAll(): array {
         return query(Person::class)->select()->all();
     }
 
