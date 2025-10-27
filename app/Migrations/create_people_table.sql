@@ -1,17 +1,19 @@
 <?php
 
-use Tempest\Database\Migration;
+namespace App\Migrations;
+
+use App\Models\Person;
 use Tempest\Database\MigratesUp;
 use Tempest\Database\QueryStatement;
 use Tempest\Database\QueryStatements\CreateTableStatement;
 
 final class CreatePeopleTable implements MigratesUp
 {
-    public string $name = '2025-10-26_create_people_table';
+    public string $name = '2025-10-26-create_people_table';
 
     public function up(): QueryStatement
     {
-        return new CreateTableStatement('people')
+        return CreateTableStatement::forModel(Person::class)
             ->primary()
             ->varchar('username')
             ->varchar('name')
